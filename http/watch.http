@@ -1,0 +1,36 @@
+
+
+###Recuperar todas los relojes
+GET http://localhost:3000/api/watches
+
+###Recuperar un reloj  por id
+GET http://localhost:3000/api/watches/66f2e1496185c0e832e23d68
+
+###Crear un reloj
+
+POST http://localhost:3000/api/watches/
+Content-Type: application/json
+
+{
+    "brand": "Audemars Piguet",
+    "model": "cown",
+    "caseMaterial": "Stainless Steel",
+    "strapMaterial": "Leather",
+    "crystalMaterial": "Sapphire",
+    "points": 1400,
+    "watchImg": "https://carreracollection.com/wp-content/uploads/2024/07/Relojes-Audemars-Piguet.jpg"
+  }
+
+
+###Actualizar un reloj
+
+PUT http://localhost:3000/api/watches/66f2e1496185c0e832e23d68
+Content-Type: application/json
+
+{
+"model": "Misco"
+}
+
+###Borrar un reloj
+
+DELETE http://localhost:3000/api/watches/66f2e1496185c0e832e23d68
