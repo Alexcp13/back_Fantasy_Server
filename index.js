@@ -6,6 +6,7 @@ import { PORT } from './config/port.config.js';
 import { connectDB } from './config/db.config.js';
 import { indexRoutes } from './routes/index.routes.js';
 import { errorHandler, errorRoute } from './err/err.js';
+import { Router } from 'express';
 
 
 dotenv.config();
@@ -23,6 +24,14 @@ connectDB();
 
 
 app.use("/api", indexRoutes);
+
+
+export const router = Router()
+
+
+router.get("/", (req, res, next) => {
+    res.json("All good in here");
+});
 
 
 app.use(errorHandler);
