@@ -1,4 +1,4 @@
-import { Router } from 'express';
+
 import express, { json } from 'express';
 import dotenv from 'dotenv';
 import { corsMiddleware } from './middlewares/cors.js';
@@ -12,13 +12,13 @@ dotenv.config();
 
 const app = express();
 
+app.use(corsMiddleware())
 
 app.use(json());
 app.disable('x-powered-by')
 
 connectDB();
 
-app.use(corsMiddleware())
 
 
 
@@ -27,7 +27,9 @@ app.use("/api", indexRoutes);
 app.use(errorHandler);
 app.use(errorRoute)
 
-
+app.use("*", (req, res, next) => {
+    return res.status(404).json("Route not found")
+})
 
 
 
