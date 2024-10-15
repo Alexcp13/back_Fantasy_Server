@@ -30,9 +30,7 @@ app.use(errorRoute)
 app.use(errorHandler);
 
 
-const {
-    PORT = 3000
-} = process.env;
+
 app.listen(PORT, () => {
     console.log(`Server listening on port http://localhost:${PORT}`);
 })
