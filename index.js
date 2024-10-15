@@ -22,7 +22,7 @@ app.use(corsMiddleware())
 app.use("/api", indexRoutes);
 
 
-app.get("/api/watches", (req, res, next) => {
+app.get("/", (req, res, next) => {
     res.json("All good in here");
 });
 
