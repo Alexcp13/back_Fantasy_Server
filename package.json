@@ -1,7 +1,7 @@
 {
   "name": "back_proyecto_casino",
   "version": "1.0.0",
-  "main": "app.js",
+  "main": "index.js",
   "type": "module",
   "scripts": {
     "dev": "nodemon app.js"
