@@ -4,7 +4,7 @@ import { corsMiddleware } from './middlewares/cors.js';
 import { PORT } from './config/port.config.js';
 import { connectDB } from './config/db.config.js';
 import { indexRoutes } from './routes/index.routes.js';
-import { errorHandler, errorRoute } from './err/index.js';
+import { errorHandler, errorRoute } from './err/err.js';
 
 
 dotenv.config();
