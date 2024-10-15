@@ -2,7 +2,8 @@ import cors from 'cors'
 
 
 const ACCEPTED_ORIGINS = [
-    'http://localhost:3000'
+    'http://localhost:3000',
+    'https://back-fantasy-server.vercel.app/'
 ] // Aqui podemos añadir mas dominios si fuesen requeridos
 
 
