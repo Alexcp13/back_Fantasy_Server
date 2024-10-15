@@ -4,7 +4,7 @@
 GET http://localhost:3000/api/watches
 
 ###Recuperar un reloj  por id
-GET http://localhost:3000/api/watches/66f2e1496185c0e832e23d68
+GET http://localhost:3000/api/watches/66f40b8164071a882ffb8243
 
 ###Crear un reloj
 
