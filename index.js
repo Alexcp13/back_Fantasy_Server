@@ -1,3 +1,4 @@
+import { Router } from 'express';
 import express, { json } from 'express';
 import dotenv from 'dotenv';
 import { corsMiddleware } from './middlewares/cors.js';
@@ -10,6 +11,7 @@ import { errorHandler, errorRoute } from './err/err.js';
 dotenv.config();
 
 const app = express();
+const router = Router()
 
 app.use(json());
 app.disable('x-powered-by')
@@ -24,6 +26,15 @@ app.use("/api", indexRoutes);
 
 app.use(errorHandler);
 app.use(errorRoute)
+
+
+
+
+
+
+app.get("*", (req, res, next) => {
+    res.json("All good in here");
+});
 
 app.listen(PORT, () => {
     console.log(`Server listening on port http://localhost:${PORT}`);
