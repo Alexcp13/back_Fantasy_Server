@@ -23,9 +23,7 @@ connectDB();
 
 
 app.use("/api", indexRoutes);
-app.use("*", (req, res, next) => {
-    return res.status(404).json("Route not found")
-})
+
 
 app.use(errorHandler);
 app.use(errorRoute)
