@@ -1,3 +1,4 @@
+import { Router } from 'express';
 
 import express, { json } from 'express';
 import dotenv from 'dotenv';
@@ -12,6 +13,7 @@ import { errorHandler, errorRoute } from './err/err.js';
 dotenv.config();
 
 const app = express();
+const router = Router()
 
 app.use(corsMiddleware())
 
@@ -25,9 +27,13 @@ connectDB();
 
 app.use("/api", indexRoutes);
 
-app.use("*", (req, res, next) => {
-    return res.status(404).json("Route Not Found")
-})
+
+
+
+
+router.get("/", (req, res, next) => {
+    res.json("All good in here");
+});
 
 app.use(errorHandler);
 app.use(errorRoute)
