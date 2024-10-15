@@ -24,7 +24,9 @@ connectDB();
 
 
 app.use("/api", indexRoutes);
-
+app.get("/", (req, res, next) => {
+    res.json("All good in here");
+});
 
 
 app.use(errorHandler);
