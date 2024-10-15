@@ -1,4 +1,4 @@
-import { Router } from 'express';
+
 
 import express, { json } from 'express';
 import dotenv from 'dotenv';
@@ -13,7 +13,6 @@ import { errorHandler, errorRoute } from './err/err.js';
 dotenv.config();
 
 const app = express();
-const router = Router()
 
 app.use(corsMiddleware())
 
@@ -30,8 +29,7 @@ app.use("/api", indexRoutes);
 
 
 
-
-router.get("/", (req, res, next) => {
+app.get("/", (req, res, next) => {
     res.json("All good in here");
 });
 
