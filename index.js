@@ -26,8 +26,8 @@ app.get("/", (req, res, next) => {
     res.json("All good in here");
 });
 
-app.use(errorRoute)
-app.use(errorHandler);
+// app.use(errorRoute)
+// app.use(errorHandler);
 
 app.listen(PORT, () => {
     console.log(`Server listening on port http://localhost:${PORT}`);
