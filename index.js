@@ -6,7 +6,7 @@ import { corsMiddleware } from './middlewares/cors.js';
 import { PORT } from './config/port.config.js';
 import { connectDB } from './config/db.config.js';
 import { indexRoutes } from './routes/index.routes.js';
-import { errorHandler, errorRoute } from './err/err.js';
+import { errorHandler } from './err/err.js';
 
 
 
@@ -26,7 +26,7 @@ app.get("*", (req, res, next) => {
     res.json("Route not found");
 });
 
-app.use(errorRoute)
+
 app.use(errorHandler);
 
 

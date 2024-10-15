@@ -1,6 +1,3 @@
-export const errorRoute = (req, res, next) => {
-    res.status(404).json({ message: "This route does not exist" });
-};
 
 
 export const errorHandler = (err, req, res, next) => {
