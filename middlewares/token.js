@@ -1,6 +1,6 @@
-import User from '../models/User.model'
+import { User } from '../models/User.model.js'
 
-import { verifyKey } from '../utils/jwt'
+import { verifyKey } from '../utils/jwt.js'
 
 
 export const isAuth = async (req, res, next) => {

@@ -3,6 +3,7 @@ import { watchesRouter } from "./watch.routes.js";
 import { authRouter } from "./auth.routes.js";
 
 import { notificationsRouter } from "./notification.routes.js";
+import { usersRouter } from "./user.routes.js";
 
 export const indexRoutes = Router();
 

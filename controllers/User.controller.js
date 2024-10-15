@@ -1,4 +1,4 @@
-import { User } from "../models/User.model";
+import { User } from "../models/User.model.js";
 
 
 
@@ -69,5 +69,27 @@ export class UserControllers {
             .then(() => res.status(204).send())
             .catch(err => next(err));
 
+    }
+    static async addWatches(req, res, next) {
+        const { id } = req.params;
+        const { watchId } = req.body;
+
+        User
+        User.findByIdAndUpdate(id, { $push: { watchId: watchId } }, { new: true })
+
+
+            .then(user => res.json(user))
+            .catch(err => next(err));
+
+
+
+    }
+    static async removeWatches(req, res, next) {
+        const { id } = req.params;
+        const { watchId } = req.body;
+
+        User.findByIdAndUpdate(id, { $pull: { myWatchs: watchId } }, { new: true })
+            .then(user => res.json(user))
+            .catch(err => next(err));
     }
 }

@@ -1,12 +1,14 @@
 
-import { Routes } from "express"
+import { Router } from "express"
+import { NotificationsController } from "../controllers/Notifications.controller.js"
 
 
 
 
-export const notificationsRouter = Routes()
+
+export const notificationsRouter = Router()
 
 
-notificationsRouter.get("/notificationsById", NotificationController.getNotificationById)
+notificationsRouter.get("/notificationsById", NotificationsController.getNotificationsById)
 
-notificationsRouter.post("/createNotification", NotificationController.createNotification)
+notificationsRouter.post("/createNotification", NotificationsController.createNotification)

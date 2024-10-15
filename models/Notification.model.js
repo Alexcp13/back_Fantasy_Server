@@ -1,10 +1,10 @@
-import { Schema, model } from 'mongoose';
+import { Schema, model, mongoose } from 'mongoose';
 
 
 const messageSchema = new Schema({
     player: {
-        type: Schema.Types.ObjectId,
-        ref: 'User'
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'users'
     },
     points: {
         type: Number,

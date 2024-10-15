@@ -1,4 +1,4 @@
-import { Schema, model } from "mongoose"
+import { Schema, model, mongoose } from "mongoose"
 import bcrypt from 'bcrypt'
 
 const userSchema = new Schema({
@@ -22,10 +22,12 @@ const userSchema = new Schema({
         enum: ['USER', 'ADMIN'],
         default: 'USER',
     },
+
     points: {
         type: Number,
         default: 0
     },
+    myWatchs: [{ type: mongoose.Schema.Types.ObjectId, ref: 'watches' }],
 
 },
     {
