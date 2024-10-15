@@ -28,7 +28,7 @@ PUT http://localhost:3000/api/watches/66f2e1496185c0e832e23d68
 Content-Type: application/json
 
 {
-"model": "Misco"
+"model": "x"
 }
 
 ###Borrar un reloj

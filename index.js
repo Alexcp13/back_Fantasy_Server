@@ -22,9 +22,6 @@ app.use(corsMiddleware())
 app.use("/api", indexRoutes);
 
 
-app.get("*", (req, res, next) => {
-    res.json("Route not found");
-});
 
 app.use(errorRoute)
 app.use(errorHandler);
