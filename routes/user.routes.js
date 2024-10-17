@@ -6,7 +6,7 @@ export const usersRouter = Router()
 
 
 usersRouter.get('/userById/:id', isAuth, UserControllers.getUserById)
-usersRouter.get('/userByPoitns/id', isAuth, UserControllers.getUserByPoints)
+usersRouter.get('/userByPoints/id', isAuth, UserControllers.getUserByPoints)
 usersRouter.put('/update/:id', isAuth, UserControllers.updateUser)
 usersRouter.patch('/addPointsTo/:id', UserControllers.addPointsToUser)
 usersRouter.patch('/removePointsTo/:id', UserControllers.removePointsToUser)
