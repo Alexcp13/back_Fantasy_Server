@@ -8,7 +8,7 @@ import { connectDB } from './config/db.config.js';
 import { indexRoutes } from './routes/index.routes.js';
 import { errorHandler } from './err/err.js';
 
-
+import { PORT } from './config/port.config.js';
 
 dotenv.config();
 
