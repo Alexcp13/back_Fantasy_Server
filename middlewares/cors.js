@@ -2,7 +2,7 @@ import cors from 'cors'
 
 
 const ACCEPTED_ORIGINS = [
-    'http://localhost:5173',
+
     'http://localhost:3000',
     'https://back-fantasy-server.vercel.app/api'
 
