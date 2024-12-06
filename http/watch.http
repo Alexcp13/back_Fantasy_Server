@@ -1,10 +1,14 @@
 
 
 ###Recuperar todas los relojes
-GET http://localhost:3000/api/watches
+GET http://localhost:3000/api/watches/MyWatches
+Authorization: Bearer "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MmU1NmY3M2Y4OTkwMGMwMGQzMDIzNyIsImlhdCI6MTczMTE3NDc2NiwiZXhwIjoxNzMxMjYxMTY2fQ.PeB1Hosb0JHkxuV5x2-rPHYGJMMQqEKf3iwtQwzUXzU"
+Content-Type: application/json
+
 
 ###Recuperar un reloj  por id
-GET http://localhost:3000/api/watches/66f40b8164071a882ffb8243
+GET http://localhost:3000/api/watches/marketplace
+Content-Type: application/json
 
 ###Crear un reloj
 
@@ -34,3 +38,24 @@ Content-Type: application/json
 ###Borrar un reloj
 
 DELETE http://localhost:3000/api/watches/66f2e1496185c0e832e23d68
+
+####
+PUT  http://localhost:3000/api/sales/6749af70ccea175861b32925/sell
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDlhZjcwY2NlYTE3NTg2MWIzMjkyNSIsImlhdCI6MTczMjg5NjAzMiwiZXhwIjoxNzMyOTgyNDMyfQ.FRimnUSbrRrln3bhCcpaKKQ-N6cEZZKporhI1s9ioh4
+Content-Type: application/json
+
+{
+  "watchId":"66f40b8164071a882ffb82e3",
+  "points": 140
+}
+###
+PUT  http://localhost:3000/api/sales/6749afc2ccea175861b32940/buy
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDlhZmMyY2NlYTE3NTg2MWIzMjk0MCIsImlhdCI6MTczMjg5NzcyNSwiZXhwIjoxNzMyOTg0MTI1fQ.ul66XVf_mnL2hnA07Y7-qqBNdfkuB211dLc9LABEMvs
+Content-Type: application/json
+
+{
+  "saleId":"6749ed3ca232762defc30ced"
+  }
+####
+GET http://localhost:3000/api/sales/marketplace 
+Content-Type: application/json

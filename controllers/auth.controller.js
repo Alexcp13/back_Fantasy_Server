@@ -1,15 +1,26 @@
 import { User } from "../models/User.model.js"
 import bcrypt from 'bcrypt'
-
+import { generateKey } from "../utils/jwt.js";
+import jwt from 'jsonwebtoken';
 
 export class AuthControllers {
 
     static signIn(req, res, next) {
         const { email, password, username } = req.body
 
+
+        if (!email || !password || !username) {
+            return res.status(400).json({ errorMessages: ['Email, Password, and Username are required'] });
+        }
+
         User
             .create({ email, password, username })
-            .then(() => res.status(201))
+            .then(user => {
+                const token = generateKey(user._id);
+
+                res.status(201).json({ message: 'User created successfully', token, user });
+            })
+
             .catch(err => next(err))
 
     }
@@ -17,13 +28,13 @@ export class AuthControllers {
 
     static login(req, res, next) {
 
-        const { email, password } = req.body
-        if (email === '' || password === '') {
+        const { username, password } = req.body
+        if (username === '' || password === '') {
             res.status(400).json({ message: 'Please provide both email and password' })
         }
 
         User
-            .findOne({ email })
+            .findOne({ username })
             .then(user => {
                 if (!user) {
                     return res.status(400).json({ message: 'El usuario o la contraseña son incorrectos' });
@@ -39,5 +50,19 @@ export class AuthControllers {
             .catch(err => next(err));
 
     }
+    static verify(req, res, next) {
+        const token = req.headers.authorization.split(' ')[1];
+        if (!token) return res.sendStatus(401);
+
+
+        jwt.verify(token, secretKey, (err, decoded) => {
+            if (err) {
+                return res.sendStatus(403);
+            }
+            return res.sendStatus(200);
+        });
+
+    }
+
 
 }

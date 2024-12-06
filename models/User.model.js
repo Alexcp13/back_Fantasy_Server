@@ -15,7 +15,7 @@ const userSchema = new Schema({
     },
     username: {
         type: String,
-        required: [true, 'Username required']
+        required: [true, 'User Name required']
     },
     role: {
         type: String,
@@ -27,12 +27,13 @@ const userSchema = new Schema({
         type: Number,
         default: 0
     },
-    myWatchs: [{ type: mongoose.Schema.Types.ObjectId, ref: 'watches' }],
+    myWatches: [{ type: mongoose.Schema.Types.ObjectId, ref: 'watches' }],
+    lastOpened: { type: Date, default: null }
 
 },
     {
         timestamps: true,
-        collections: 'users'
+        collection: 'users'
     }
 )
 

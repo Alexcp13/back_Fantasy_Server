@@ -1,4 +1,4 @@
-import { Schema, model } from "mongoose";
+import mongoose, { Schema, model } from "mongoose";
 
 
 const watchSchema = new Schema({
@@ -28,11 +28,14 @@ const watchSchema = new Schema({
     points: {
         type: Number,
         required: [true, 'Points are required']
-    }
-    , watchImg: {
+    },
+
+    watchImg: {
         type: String,
         required: [true, 'Image is required']
     },
+
+
 },
     {
         timestamps: true,

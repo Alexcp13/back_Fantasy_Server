@@ -12,5 +12,31 @@ Content-Type:application/json
     "role": "USER"
    
 }
+#####
+GET http://localhost:3000/api/users/usersByPoints
 
 
+
+
+####
+
+PATCH  http://localhost:3000/api/users/672e56f73f89900c00d30237/removePointsTo
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MmU1NmY3M2Y4OTkwMGMwMGQzMDIzNyIsImlhdCI6MTczMTkxOTg4NSwiZXhwIjoxNzMyMDA2Mjg1fQ.xy_EKE8cAjiPfS46N7gJ9jt96POAoAd3tTeYZQsA5KY
+Content-Type: application/json
+
+
+
+{
+    "points": 3000
+}
+
+#####
+PATCH  http://localhost:3000/api/users/672e56f73f89900c00d30237/addPointsTo
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MmU1NmY3M2Y4OTkwMGMwMGQzMDIzNyIsImlhdCI6MTczMTkxOTg4NSwiZXhwIjoxNzMyMDA2Mjg1fQ.xy_EKE8cAjiPfS46N7gJ9jt96POAoAd3tTeYZQsA5KY
+Content-Type: application/json
+
+
+
+{
+    "points": 3000
+}Ñ

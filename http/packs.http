@@ -1,0 +1,12 @@
+GET http://localhost:3000/api/packs/dailyPack
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MmU1NmY3M2Y4OTkwMGMwMGQzMDIzNyIsImlhdCI6MTczMTkzNDUzMCwiZXhwIjoxNzMyMDIwOTMwfQ.tgNMyssb4CJIP-n1PjEr43h3TBRUhwjYNM5rGqX_YQA
+Content-Type: application/json
+
+
+
+
+####
+Get http://localhost:3000/api/users/672e56f73f89900c00d30237/myWatches
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MmU1NmY3M2Y4OTkwMGMwMGQzMDIzNyIsImlhdCI6MTczMjcyNTA3OCwiZXhwIjoxNzMyODExNDc4fQ.rxB00rBFrI_tiaPPfdEL2zDjAkJLBqytA0kOjLsFwSo
+
+Content-Type: application/json
